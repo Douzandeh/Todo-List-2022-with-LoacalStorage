@@ -168,3 +168,33 @@ input:checked ~ .bubble::after {
 .create-todo input[type="submit"]:hover {
   opacity: 0.75;
 }
+
+.todo-list .list {
+  margin: 1rem 0;
+}
+
+.todo-list .todo-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.todo-item label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+
+.todo-item .todo-content{
+  flex: 1 1 0%;
+}
+
+.todo-item .todo-content input{
+  color: var(--dark);
+  font-size: 1.125rem;
+}
