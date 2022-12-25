@@ -82,3 +82,67 @@ h4{
   box-shadow: var(--shadow);
   margin-bottom: 1.5rem;
 }
+
+.create-todo .options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.create-todo .options label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.bubble{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--business);
+  box-shadow: var(--business-glow);
+}
+
+.bubble.personal{
+  border-color: var(--personal);
+  box-shadow: var(--personal-glow);
+}
+
+
+.bubble::after{
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  background-color: var(--business);
+  box-shadow: var(--business-glow);
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after{
+  background-color: var(--personal);
+  box-shadow: var(--personal-glow);
+}
+
+input:checked ~ .bubble::after{
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
